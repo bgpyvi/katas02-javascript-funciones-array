@@ -25,7 +25,7 @@ La solucion proviene del testing. El testing nos ayuda a mantener la calidad de 
 
 **Ejecución de los tests**
 
-Para correr los tests de Jest ejecuta el comando  `npm test` en el terminal.
+Para correr los tests de Jest ejecuta el comando  `pnpm test` en el terminal.
 
 **Pasar los tests**
 
