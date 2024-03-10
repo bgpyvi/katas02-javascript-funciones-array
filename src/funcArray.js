@@ -36,7 +36,16 @@ export function averageNumbers(array) {
 }
 
 export function averageWordLength(array) {
-    // Implementa la lógica para calcular la longitud promedio de las palabras en el array
+    if (array.length === 0) {
+        return undefined;
+    }
+
+    let totalLength = 0;
+    array.forEach(word => {
+        totalLength += word.length;
+    });
+
+    return totalLength / array.length;
 }
 
 export function uniquifyArray(array) {
@@ -50,13 +59,31 @@ export function uniquifyArray(array) {
 }
 
 export function doesWordExist(array, palabra) {
-    // Implementa la lógica para verificar si la palabra existe en el array
+    return array.includes(palabra);
 }
 
-export function howManyTimes() {
-    // Implementa la lógica para contar cuántas veces aparece una palabra en el array
+export function howManyTimes(array, palabra) {
+    let count = 0;
+    array.forEach(word => {
+        if (word === palabra) {
+            count++;
+        }
+    });
+    return count;
 }
 
-export function greatestProduct() {
-    // Implementa la lógica para encontrar el mayor producto de elementos adyacentes en el array
+export function greatestProduct(array) {
+    if (array.length < 2) {
+        return undefined;
+    }
+
+    let maxProduct = array[0] * array[1];
+    for (let i = 1; i < array.length - 1; i++) {
+        const product = array[i] * array[i + 1];
+        if (product > maxProduct) {
+            maxProduct = product;
+        }
+    }
+
+    return maxProduct;
 }
